@@ -15,6 +15,7 @@ before_install:
   - echo "options(HTTPUserAgent = paste0('R/', getRversion(), ' R (', paste(getRversion(), R.version['platform'], R.version['arch'], R.version['os']),')'))" >> ~/.Rprofile.site
 
 script:
+  - Rscript -e "library('tidyverse')"
   - make html
 
 after_success:
